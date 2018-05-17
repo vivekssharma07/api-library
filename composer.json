@@ -18,7 +18,7 @@
     "php": ">=5.3.7",
     "ext-curl": "*",
     "psr/log": "~1.0",
-    "vivekssharma07/api-library": "dev-master"
+    "leadsengage/api-library": "dev-master"
   },
   "require-dev": {
     "raveren/kint": "~0.9",
