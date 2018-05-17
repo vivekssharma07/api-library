@@ -128,7 +128,7 @@ Now that you have an access token and the auth object, you can make API requests
 use Leadsengage\LeadsengageApi;
 
 // Create an api context by passing in the desired context (Contacts, Forms, Pages, etc), the $auth object from above
-// and the base URL to the Leadsengage server (i.e. http://my-mautic-server.com/api/)
+// and the base URL to the Leadsengage server (i.e. http://my-leadsengage-server.com/api/)
 
 $api = new LeadsengageApi();
 $contactApi = $api->newApi('contacts', $auth, $apiUrl);
