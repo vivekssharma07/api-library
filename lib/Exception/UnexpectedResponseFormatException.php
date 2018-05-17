@@ -1,15 +1,7 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage\Exception;
 
-namespace Mautic\Exception;
-
-use Mautic\Response;
+use Leadsengage\Response;
 
 /**
  * Exception representing an unexpected HTTP response

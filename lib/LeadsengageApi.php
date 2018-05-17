@@ -1,21 +1,13 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage;
 
-namespace Mautic;
-
-use Mautic\Auth\AuthInterface;
-use Mautic\Exception\ContextNotFoundException;
+use Leadsengage\Auth\AuthInterface;
+use Leadsengage\Exception\ContextNotFoundException;
 
 /**
- * Mautic API Factory
+ * Leadsengage API Factory
  */
-class MauticApi
+class LeadsengageApi
 {
     /**
      * Get an API context object
@@ -36,7 +28,7 @@ class MauticApi
         $apiContext = ucfirst($apiContext);
 
         if (!isset($context[$apiContext])) {
-            $class = 'Mautic\\Api\\'.$apiContext;
+            $class = 'Leadsengage\\Api\\'.$apiContext;
 
             if (!class_exists($class)) {
                 throw new ContextNotFoundException("A context of '$apiContext' was not found.");
@@ -62,7 +54,8 @@ class MauticApi
     {
         $apiContext = ucfirst($apiContext);
 
-        $class = 'Mautic\\Api\\'.$apiContext;
+        $class = 'Leadsengage\\Api\\'.$apiContext;
+
 
         if (!class_exists($class)) {
             throw new ContextNotFoundException("A context of '$apiContext' was not found.");

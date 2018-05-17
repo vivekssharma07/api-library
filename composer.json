@@ -1,16 +1,16 @@
 {
-  "name": "vivekssharma07/api-library",
+  "name": "leadsengage/api-library",
   "license": "MIT",
   "type": "library",
   "description": "Leadsengage API Connector Library",
   "autoload": {
     "psr-4": {
-      "Mautic\\": "lib/"
+      "Leadsengage\\": "lib/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mautic\\Tests\\": "tests/"
+      "Leadsengage\\Tests\\": "tests/"
     }
   },
   "require": {

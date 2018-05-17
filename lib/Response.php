@@ -1,15 +1,7 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage;
 
-namespace Mautic;
-
-use Mautic\Exception\UnexpectedResponseFormatException;
+use Leadsengage\Exception\UnexpectedResponseFormatException;
 
 /**
  * Class helping with API responses

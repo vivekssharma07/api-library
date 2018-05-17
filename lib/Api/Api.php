@@ -1,17 +1,10 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
 
-namespace Mautic\Api;
+namespace Leadsengage\Api;
 
-use Mautic\QueryBuilder\QueryBuilder;
-use Mautic\Auth\ApiAuth;
-use Mautic\Auth\AuthInterface;
+use Leadsengage\QueryBuilder\QueryBuilder;
+use Leadsengage\Auth\ApiAuth;
+use Leadsengage\Auth\AuthInterface;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -57,7 +50,7 @@ class Api implements LoggerAwareInterface
     protected $endpointsSupported = array();
 
     /**
-     * Array of deprecated endpoints to use if a response fails as a 404 with a previous version of Mautic
+     * Array of deprecated endpoints to use if a response fails as a 404 with a previous version of Leadsengage
      *
      * @var array
      */
@@ -248,7 +241,7 @@ class Api implements LoggerAwareInterface
                 $error = array(
                     'code'    => 500,
                     'message' => sprintf(
-                        'URL is incomplete.  Please use %s, set the base URL as the third argument to $MauticApi->newApi(), or make $endpoint a complete URL.',
+                        'URL is incomplete.  Please use %s, set the base URL as the third argument to $LeadsengageApi->newApi(), or make $endpoint a complete URL.',
                         __CLASS__.'setBaseUrl()'
                     )
                 );
@@ -284,7 +277,7 @@ class Api implements LoggerAwareInterface
                         );
                     }
                 } catch (\Exception $e) {
-                    $this->getLogger()->error('Failed connecting to Mautic API: '.$e->getMessage(), array('trace' => $e->getTraceAsString()));
+                    $this->getLogger()->error('Failed connecting to Leadsengage API: '.$e->getMessage(), array('trace' => $e->getTraceAsString()));
 
                     $error = array(
                         'code'    => $e->getCode(),
@@ -300,7 +293,7 @@ class Api implements LoggerAwareInterface
                     'error'  => $error
                 );
             } elseif (!empty($response['errors'])) {
-                $this->getLogger()->error('Mautic API returned errors: '.var_export($response['errors'], true));
+                $this->getLogger()->error('Leadsengage API returned errors: '.var_export($response['errors'], true));
             }
 
             // @deprecated 2.6.0 BC error handling
@@ -363,17 +356,17 @@ class Api implements LoggerAwareInterface
     }
 
     /**
-     * Returns Mautic version from the HTTP response headers
-     * (the header exists since Mautic 2.4.0)
+     * Returns Leadsengage version from the HTTP response headers
+     * (the header exists since Leadsengage 2.4.0)
      *
      * @return string|null if not known
      */
-    public function getMauticVersion()
+    public function getLeadsengageVersion()
     {
         $headers = $this->auth->getResponseHeaders();
 
-        if (isset($headers['Mautic-Version'])) {
-            return $headers['Mautic-Version'];
+        if (isset($headers['Leadsengage-Version'])) {
+            return $headers['Leadsengage-Version'];
         }
 
         return null;

@@ -1,14 +1,4 @@
 <?php
-
-/*
- * @copyright   2017 Mautic Contributors. All rights reserved
- * @author      Mautic, Inc.
- *
- * @link        https://mautic.org
- *
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- */
-
 /*
 |--------------------------------------------------------------------------
 | Basic Authentication Flow
@@ -34,10 +24,10 @@
 |
 | To use, just pass the auth object to the Api context you are creating.
 |
-| use Mautic\MauticApi;
+| use Leadsengage\LeadsengageApi;
 |
 | // Get a Contact context
-| $api = new MauticApi();
+| $api = new LeadsengageApi();
 | $contactApi = $api->newApi('contacts', $auth, $settings['apiUrl']);
 |
 | // Get Contact list
@@ -51,9 +41,9 @@
 |
 */
 
-namespace Mautic\Auth;
+namespace Leadsengage\Auth;
 
-use Mautic\Exception\RequiredParameterMissingException;
+use Leadsengage\Exception\RequiredParameterMissingException;
 
 /**
  * Basic Authentication Client mashed together by MarkLL
