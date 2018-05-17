@@ -1,24 +1,16 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage\Tests\Api;
 
-namespace Mautic\Tests\Api;
-
-class AssetsTest extends MauticApiTestCase
+class AssetsTest extends LeadsengageApiTestCase
 {
     protected $skipPayloadAssertion = array('file');
 
     public function setUp() {
         $this->api = $this->getContext('assets');
         $this->testPayload = array(
-            'title' => 'Mautic Logo sent as a API request',
+            'title' => 'Leadsengage Logo sent as a API request',
             'storageLocation' => 'remote',
-            'file' => 'https://www.mautic.org/media/logos/logo/Mautic_Logo_DB.pdf'
+            'file' => 'https://www.leadsengage.org/media/logos/logo/Leadsengage.pdf'
         );
     }
 
@@ -38,7 +30,7 @@ class AssetsTest extends MauticApiTestCase
         $this->apiFiles = $this->getContext('files');
         $this->apiFiles->setFolder('assets');
         $fileRequest = array(
-            'file' => dirname(__DIR__).'/'.'mauticlogo.png'
+            'file' => dirname(__DIR__).'/'.'leadsengagelogo.png'
         );
         $response = $this->apiFiles->create($fileRequest);
         $this->assertErrors($response);
