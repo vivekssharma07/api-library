@@ -3,7 +3,7 @@
   "license": "MIT",
   "type": "library",
   "description": "Leadsengage API Connector Library",
-  "minimum-stability": "dev-master",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
@@ -23,10 +23,5 @@
   "require-dev": {
     "raveren/kint": "~0.9",
     "phpunit/phpunit": "~4.8|~5.0"
-  },
-   "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
-    }
+  }
 }
