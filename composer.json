@@ -3,7 +3,7 @@
   "license": "MIT",
   "type": "library",
   "description": "Leadsengage API Connector Library",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev-master",
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
