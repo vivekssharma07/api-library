@@ -1,19 +1,19 @@
-# Using the Mautic API Library
+# Using the Leadsengage API Library
 
 ## Requirements
 * PHP 5.3.7 or newer
 * cURL support
 
-## Mautic Setup
-The API must be enabled in Mautic. Within Mautic, go to the Configuration page (located in the Settings menu) and under API Settings enable
-Mautic's API. If you intend on using Basic Authentication, ensure you enable it. You can also choose which OAuth protocol to use here.  After saving the configuration, go to the API Credentials page
+## Leadsengage Setup
+The API must be enabled in Leadsengage. Within Leadsengage, go to the Configuration page (located in the Settings menu) and under API Settings enable
+Leadsengage's API. If you intend on using Basic Authentication, ensure you enable it. You can also choose which OAuth protocol to use here.  After saving the configuration, go to the API Credentials page
 (located in the Settings menu) and create a new client.  Enter the callback/redirect URI that the request will be sent from.  Click Apply
 then copy the Client ID and Client Secret to the application that will be using the API.
 
 ## Authorization
 
 ### Obtaining an access token
-The first step is to obtain authorization.  Mautic supports OAuth 1.0a and OAuth 2 however it is up to the administrator
+The first step is to obtain authorization.  Leadsengage supports OAuth 1.0a and OAuth 2 however it is up to the administrator
 to decide which is enabled.  Thus it is best to have a configuration option within your project for the administrator
 to choose what method should be used by your code.
 
@@ -23,7 +23,7 @@ to choose what method should be used by your code.
 // Bootup the Composer autoloader
 include __DIR__ . '/vendor/autoload.php';  
 
-use Mautic\Auth\ApiAuth;
+use Leadsengage\Auth\ApiAuth;
 
 session_start();
 
@@ -33,10 +33,10 @@ $callback  = '';
 
 // ApiAuth->newAuth() will accept an array of Auth settings
 $settings = array(
-    'baseUrl'          => '',       // Base URL of the Mautic instance
+    'baseUrl'          => '',       // Base URL of the Leadsengage instance
     'version'          => 'OAuth2', // Version of the OAuth can be OAuth2 or OAuth1a. OAuth2 is the default value.
-    'clientKey'        => '',       // Client/Consumer key from Mautic
-    'clientSecret'     => '',       // Client/Consumer secret key from Mautic
+    'clientKey'        => '',       // Client/Consumer key from Leadsengage
+    'clientSecret'     => '',       // Client/Consumer secret key from Leadsengage
     'callback'         => ''        // Redirect URI/Callback URI for this script
 );
 
@@ -89,7 +89,7 @@ Here is the BasicAuth version of the code above.
 // Bootup the Composer autoloader
 include __DIR__ . '/vendor/autoload.php';  
 
-use Mautic\Auth\ApiAuth;
+use Leadsengage\Auth\ApiAuth;
 
 session_start();
 
@@ -125,12 +125,12 @@ Now that you have an access token and the auth object, you can make API requests
 ```php
 <?php
 
-use Mautic\MauticApi;
+use Leadsengage\LeadsengageApi;
 
 // Create an api context by passing in the desired context (Contacts, Forms, Pages, etc), the $auth object from above
-// and the base URL to the Mautic server (i.e. http://my-mautic-server.com/api/)
+// and the base URL to the Leadsengage server (i.e. http://my-mautic-server.com/api/)
 
-$api = new MauticApi();
+$api = new LeadsengageApi();
 $contactApi = $api->newApi('contacts', $auth, $apiUrl);
 ```
 
@@ -219,11 +219,11 @@ if (isset($response['error'])) {
 
 ## Unit tests
 
-Configure the unit tests config before running the unit tests. The tests fire real API requests to a Mautic instance.
+Configure the unit tests config before running the unit tests. The tests fire real API requests to a Leadsengage instance.
 
 1. Copy `/tests/local.config.php.dist` to `/tests/local.config.php`.
 2. Open the API tester in the browser like http://localhost/api-library/apitester/index.php
-3. Fill in the URL of your Mautic instance.
+3. Fill in the URL of your Leadsengage instance.
 4. Click Submit to store the URL to the session.
 5. Fill in one of the OAuth credentials and authorize.
 6. Open the $_SESSION array and copy the 'access_token' to the local.config.php file.
