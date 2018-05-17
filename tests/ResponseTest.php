@@ -1,16 +1,8 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage\Tests;
 
-namespace Mautic\Tests;
-
-use Mautic\Response;
-use Mautic\Exception\UnexpectedResponseFormatException;
+use Leadsengage\Response;
+use Leadsengage\Exception\UnexpectedResponseFormatException;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,7 +23,7 @@ Server: Apache/2.4.25 (Unix) OpenSSL/0.9.8zh PHP/7.0.15
 X-Powered-By: PHP/7.0.15
 Set-Cookie: 9743595cf0a472cb3ec0272949ffe7e8=ahtmrsuem98b5kunm2g162pa85; path=/; HttpOnly
 Cache-Control: no-cache
-Location: http://mautic.dev/index_dev.php/s/login
+Location: http://leadsengage.dev/index_dev.php/s/login
 Content-Length: 400
 Content-Type: text/html; charset=UTF-8
 
@@ -63,7 +55,7 @@ Content-Type: text/html; charset=UTF-8';
     private $urlParamBody = 'first=value&arr[]=foo+bar&arr[]=baz';
 
     private $curlInfo = array(
-        'url' => 'http://mautic.dev/index_dev.php',
+        'url' => 'http://leadsengage.dev/index_dev.php',
         'content_type' => null,
         'http_code' => 200,
         'header_size' => 0,
