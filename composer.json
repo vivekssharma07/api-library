@@ -1,8 +1,8 @@
 {
-  "name": "mautic/api-library",
+  "name": "vivekssharma07/api-library",
   "license": "MIT",
   "type": "library",
-  "description": "Mautic API Connector Library",
+  "description": "Leadsengage API Connector Library",
   "autoload": {
     "psr-4": {
       "Mautic\\": "lib/"
