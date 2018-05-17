@@ -1,17 +1,7 @@
 <?php
+namespace Leadsengage\Tests\QueryBuilder;
 
-/*
- * @copyright   2016 Mautic Contributors. All rights reserved
- * @author      Mautic, Inc.
- *
- * @link        https://mautic.org
- *
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- */
-
-namespace Mautic\Tests\QueryBuilder;
-
-use Mautic\QueryBuilder\WhereBuilder;
+use Leadsengage\QueryBuilder\WhereBuilder;
 
 class WhereBuilderTest extends \PHPUnit_Framework_TestCase
 {
