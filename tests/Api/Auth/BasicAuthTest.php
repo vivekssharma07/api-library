@@ -1,19 +1,11 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage\Tests\Api\Auth;
 
-namespace Mautic\Tests\Api\Auth;
+use Leadsengage\LeadsengageApi;
+use Leadsengage\Auth\ApiAuth;
+use Leadsengage\Tests\Api\LeadsengageTestCase;
 
-use Mautic\MauticApi;
-use Mautic\Auth\ApiAuth;
-use Mautic\Tests\Api\MauticApiTestCase;
-
-class BasicAuthTest extends MauticApiTestCase
+class BasicAuthTest extends LeadsengageTestCase
 {
     protected $configFile = '';
 
@@ -26,7 +18,7 @@ class BasicAuthTest extends MauticApiTestCase
     * Verify that the error handling in setup method is working
     * - No Username
     *
-    * @expectedException \Mautic\Exception\RequiredParameterMissingException
+    * @expectedException \Leadsengage\Exception\RequiredParameterMissingException
     * @expectedExceptionCode 500
     */
     public function testParameterExceptionErrorNoUserName()
@@ -40,7 +32,7 @@ class BasicAuthTest extends MauticApiTestCase
     * Verify that the error handling in setup method is working
     * - No Password
     *
-    * @expectedException \Mautic\Exception\RequiredParameterMissingException
+    * @expectedException \Leadsengage\Exception\RequiredParameterMissingException
     * @expectedExceptionCode 500
     */
     public function testParameterExceptionErrorNoPassword()
@@ -54,7 +46,7 @@ class BasicAuthTest extends MauticApiTestCase
     * Verify that the error handling in setup method is working
     * - Empty Username
     *
-    * @expectedException \Mautic\Exception\RequiredParameterMissingException
+    * @expectedException \Leadsengage\Exception\RequiredParameterMissingException
     * @expectedExceptionCode 500
     */
     public function testParameterExceptionErrorEmptyUserName()
@@ -68,7 +60,7 @@ class BasicAuthTest extends MauticApiTestCase
     * Verify that the error handling in setup method is working
     * - Empty password
     *
-    * @expectedException \Mautic\Exception\RequiredParameterMissingException
+    * @expectedException \Leadsengage\Exception\RequiredParameterMissingException
     * @expectedExceptionCode 500
     */
     public function testParameterExceptionErrorEmptyPassword()
