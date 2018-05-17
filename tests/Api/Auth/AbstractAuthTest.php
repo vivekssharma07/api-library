@@ -1,16 +1,8 @@
 <?php
-/**
- * @package     Mautic
- * @copyright   2014 Mautic, NP. All rights reserved.
- * @author      Mautic
- * @link        http://mautic.org
- * @license     MIT http://opensource.org/licenses/MIT
- */
+namespace Leadsengage\Tests\Api\Auth;
 
-namespace Mautic\Tests\Api\Auth;
-
-use Mautic\Auth\AbstractAuth;
-use Mautic\Exception\UnexpectedResponseFormatException;
+use Leadsengage\Auth\AbstractAuth;
+use Leadsengage\Exception\UnexpectedResponseFormatException;
 
 class AbstractAuthTest extends \PHPUnit_Framework_TestCase
 {
